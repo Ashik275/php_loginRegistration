@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_name'])) {
+    echo "Please Login";
+    exit();
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -10,6 +17,7 @@
 
 <body>
     <div class="container">
+        <div class="bg-info"><p class="fw-bold text-center">Welcome <?php echo $_SESSION['user_name'];?></p></div>
         <table class="table table-dark">
             <thead>
                 <tr>
@@ -33,8 +41,8 @@
                 <?php } ?>
             </tbody>
         </table>
-        <div class="w-100">
-            <button class="btn btn-danger btn-lg w-100" name="login">Logout</button>
+        <div>
+            <a href="logOut.php" class="btn btn-danger">LogOut</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

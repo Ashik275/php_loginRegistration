@@ -80,7 +80,7 @@ if (isset($_POST['registration'])) {
                 </select>
             </div>
             <div class="w-100">
-                <button class="btn btn-outline-light btn-lg w-100" type="submit" name="registration">Register</button>
+                <button class="btn btn-outline-light btn-lg w-100" type="submit" name="registration">Registergit init</button>
             </div>
             <div class="d-flex">
                 <p class="text-white">Already Register?</p><a href="loginPage.php">Please Login</a>

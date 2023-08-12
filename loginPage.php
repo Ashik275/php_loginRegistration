@@ -10,6 +10,8 @@ if (isset($_POST['login'])) {
     }else{
         $checkUser = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM `users` WHERE `user_email`='$email'"));
         if($checkUser['password']==$pass ){
+            session_start();
+            $_SESSION['user_name']= $checkUser['user_name'];
            header('Location:users.php');
         }else{
             echo '<div class="alert alert-danger" role="alert">
